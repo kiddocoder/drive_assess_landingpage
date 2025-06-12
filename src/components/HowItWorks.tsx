@@ -1,5 +1,6 @@
 import type React from "react"
 import { CreditCard, BookOpen, FileCheck, Trophy } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 const HowItWorks: React.FC = () => {
   const steps = [
@@ -34,6 +35,8 @@ const HowItWorks: React.FC = () => {
       color: "bg-red-600",
     },
   ]
+
+  const navigate = useNavigate()
 
   return (
     <section className="py-20 bg-gray-50">
@@ -114,7 +117,9 @@ const HowItWorks: React.FC = () => {
               Join thousands of successful drivers who chose our proven method. Start with our free trial today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105">
+              <button
+                onClick={() => navigate("/quiz")}
+                className="cursor-pointer bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105">
                 Start Free Trial
               </button>
               <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105">

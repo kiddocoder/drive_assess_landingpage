@@ -1,5 +1,7 @@
 import type React from "react"
 import { MapPin, Target } from "lucide-react"
+import facebookLogo from "../assets/facebook_logo.png"
+import youtubeLogo from "../assets/youtube_logo.png"
 
 const LegalSection: React.FC = () => {
   return (
@@ -50,7 +52,7 @@ const LegalSection: React.FC = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-xl">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                  <img src="/src/assets/facebook_logo.png" className="w-full h-full text-white" />
+                  <img src={facebookLogo} className="w-full h-full object-cover text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">Facebook Ads</h4>
@@ -60,7 +62,7 @@ const LegalSection: React.FC = () => {
 
               <div className="flex items-center space-x-4 p-4 bg-red-50 rounded-xl">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                  <img src="/src/assets/youtube_logo.png" className="w-full h-full text-white" />
+                  <img src={youtubeLogo} className="w-full h-full object-cover text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">YouTube Ads</h4>

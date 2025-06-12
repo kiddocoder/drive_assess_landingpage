@@ -2,6 +2,9 @@ import type React from "react"
 import { Mail, Phone, MapPin, Globe, ArrowUp } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import facebookLogo from "../assets/facebook_logo.png"
+import youtubeLogo from "../assets/youtube_logo.png"
+
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear()
@@ -83,12 +86,12 @@ const Footer: React.FC = () => {
             <div className="p-3  flex space-x-4">
               <Link to="#" className="rounded-full transition-colors">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white">
-                  <img src="/src/assets/facebook_logo.png" className="max-w-full max-h-full" />
+                  <img src={facebookLogo} className="max-w-full max-h-full" />
                 </div>
               </Link>
               <Link to="#" className="rounded-full transition-colors">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white">
-                  <img src="/src/assets/youtube_logo.png" className="max-w-full max-h-full" />
+                  <img src={youtubeLogo} className="max-w-full max-h-full" />
                 </div>
               </Link>
             </div>
