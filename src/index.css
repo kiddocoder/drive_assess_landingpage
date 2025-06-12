@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-onest {
+    font-family: "Onest", sans-serif;
+  }
+
+  .font-nunito {
+    font-family: "Nunito Sans", sans-serif;
+  }
+}
