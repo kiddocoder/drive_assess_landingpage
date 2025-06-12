@@ -4,6 +4,7 @@ import "./index.css";
 
 import Home from "./pages/Home";
 import AppLayout from "./layouts/AppLayout";
+import TakeQuiz from "./pages/TakeQuiz";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/quiz",
+        element: <TakeQuiz />
+      }
     ]
   }
 

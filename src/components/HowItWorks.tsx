@@ -108,7 +108,7 @@ const HowItWorks: React.FC = () => {
 
         {/* CTA Section */}
         <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+          <div className="bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-gray-900 mb-4 font-onest">Ready to Start Your Journey?</h3>
             <p className="text-lg text-gray-600 mb-8 font-nunito">
               Join thousands of successful drivers who chose our proven method. Start with our free trial today!

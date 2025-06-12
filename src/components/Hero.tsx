@@ -1,22 +1,20 @@
 import type React from "react"
 import { Play, BookOpen, CreditCard } from "lucide-react"
+import DriveMap from "../assets/car_map.jpg"
+import { Link } from "react-router-dom"
 
 const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden"
+      className="relative bg-gradient-to-br from-blue-600/95 via-blue-700/95 to-blue-800/95 text-white overflow-hidden"
+      style={{
+        backgroundImage: `url(${DriveMap})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundBlendMode: "multiply"
+      }}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -29,18 +27,19 @@ const Hero: React.FC = () => {
               Free sample questions. Fast results. Real success.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 flex-wrap">
+              <Link to="/quiz"
+                className="whitespace-nowrap bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                 <Play className="w-5 h-5" />
                 <span>Start Free Trial</span>
-              </button>
+              </Link>
 
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+              <button className="whitespace-nowrap bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                 <CreditCard className="w-5 h-5" />
                 <span>Buy Full Access</span>
               </button>
 
-              <button className="bg-white hover:bg-gray-100 text-blue-800 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+              <button className="whitespace-nowrap bg-white hover:bg-gray-100 text-blue-800 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                 <BookOpen className="w-5 h-5" />
                 <span>Premium Guide</span>
               </button>
@@ -65,23 +64,25 @@ const Hero: React.FC = () => {
 
           {/* Right Content - Hero Image */}
           <div className="relative">
-            <div className="relative z-10">
+            <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border-4 border-white/20">
               <img
-                src="../../assets/canada_driving_scene.jpeg"
-                alt="Canadian driving scene"
-                className="w-full h-auto rounded-2xl shadow-2xl"
+                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+                alt="Person driving a car in Canadian setting"
+                className="w-full h-auto max-h-[500px] object-cover"
               />
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 bg-white text-gray-800 p-4 rounded-xl shadow-lg animate-bounce">
+            <div className="absolute -top-4 -right-4 bg-white text-gray-800 p-4 rounded-xl shadow-lg animate-bounce z-20">
               <div className="text-2xl font-bold text-green-600">98%</div>
               <div className="text-sm font-medium">Pass Rate</div>
             </div>
 
-            <div className="absolute -bottom-4 -left-4 bg-red-600 text-white p-4 rounded-xl shadow-lg">
-              <div className="text-lg font-bold">🇨🇦</div>
-              <div className="text-sm font-medium">Canada Only</div>
+            <div className="absolute -bottom-4 -left-4 bg-red-600 text-white p-4 rounded-xl shadow-lg z-20">
+              <div className="flex items-center gap-2">
+                <div className="text-lg font-bold">🇨🇦</div>
+                <div className="text-sm font-medium">Canada Only</div>
+              </div>
             </div>
           </div>
         </div>

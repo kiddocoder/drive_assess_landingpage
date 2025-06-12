@@ -49,15 +49,15 @@ const MultilingualSection: React.FC = () => {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center space-x-2">
+            <div className="bg-white rounded-full px-6 py-3 shadow-sm flex items-center space-x-2">
               <Users className="w-5 h-5 text-blue-600" />
               <span className="font-semibold text-gray-800">24+ Languages</span>
             </div>
-            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center space-x-2">
+            <div className="bg-white rounded-full px-6 py-3 shadow-sm flex items-center space-x-2">
               <CheckCircle className="w-5 h-5 text-green-600" />
               <span className="font-semibold text-gray-800">Professional Translation</span>
             </div>
-            <div className="bg-white rounded-full px-6 py-3 shadow-md flex items-center space-x-2">
+            <div className="bg-white rounded-full px-6 py-3 shadow-sm flex items-center space-x-2">
               <Globe className="w-5 h-5 text-purple-600" />
               <span className="font-semibold text-gray-800">Cultural Context</span>
             </div>
@@ -69,7 +69,7 @@ const MultilingualSection: React.FC = () => {
           {languages.map((language, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-4 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer border border-gray-200"
+              className="bg-white rounded-xl p-4 text-center transition-all duration-300 transform hover:-translate-y-1 cursor-pointer border border-gray-200"
             >
               <div className="text-3xl mb-2">{language.flag}</div>
               <div className="font-semibold text-gray-800 text-sm font-nunito">{language.name}</div>
@@ -79,7 +79,7 @@ const MultilingualSection: React.FC = () => {
         </div>
 
         {/* Language Selector Demo */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4 font-onest">Switch Languages Instantly</h3>
             <p className="text-gray-600 font-nunito">

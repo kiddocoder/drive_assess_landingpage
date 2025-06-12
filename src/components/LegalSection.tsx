@@ -1,5 +1,5 @@
 import type React from "react"
-import { MapPin, Target, Facebook, Youtube } from "lucide-react"
+import { MapPin, Target } from "lucide-react"
 
 const LegalSection: React.FC = () => {
   return (
@@ -44,13 +44,13 @@ const LegalSection: React.FC = () => {
           </div>
 
           {/* Right Content - Advertising Platforms */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-white rounded-2xl shadow-sm p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 font-onest">Our Advertising Partners</h3>
 
             <div className="space-y-6">
               <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-xl">
-                <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center">
-                  <Facebook className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                  <img src="/src/assets/facebook_logo.png" className="w-full h-full text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">Facebook Ads</h4>
@@ -59,8 +59,8 @@ const LegalSection: React.FC = () => {
               </div>
 
               <div className="flex items-center space-x-4 p-4 bg-red-50 rounded-xl">
-                <div className="bg-red-600 w-12 h-12 rounded-full flex items-center justify-center">
-                  <Youtube className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                  <img src="/src/assets/youtube_logo.png" className="w-full h-full text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">YouTube Ads</h4>
@@ -82,7 +82,7 @@ const LegalSection: React.FC = () => {
         </div>
 
         {/* Legal Compliance */}
-        <div className="mt-16 bg-white rounded-2xl shadow-xl p-8">
+        <div className="mt-16 bg-white rounded-2xl shadow-sm p-8">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8 font-onest">Legal Compliance & Privacy</h3>
 
           <div className="grid md:grid-cols-3 gap-6">

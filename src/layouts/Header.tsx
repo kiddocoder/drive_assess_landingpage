@@ -3,10 +3,12 @@
 import type React from "react"
 import { useState } from "react"
 import { Menu, X, Globe } from "lucide-react"
+import { Link, useNavigate } from "react-router-dom"
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [selectedLanguage, setSelectedLanguage] = useState("EN")
+  const navigate = useNavigate()
 
   const languages = [
     { code: "EN", name: "English", flag: "🇨🇦" },
@@ -18,11 +20,11 @@ const Header: React.FC = () => {
   ]
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">D</span>
             </div>
@@ -30,25 +32,25 @@ const Header: React.FC = () => {
               <h1 className="text-xl font-bold text-gray-900 font-onest">Driving Assessment</h1>
               <p className="text-sm text-red-600 font-semibold">for Canada</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            <Link to="/" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Home
-            </a>
-            <a href="#pricing" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            </Link>
+            <Link to="#pricing" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Pricing
-            </a>
-            <a href="#free-trial" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            </Link>
+            <Link to="/quiz" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Free Trial
-            </a>
-            <a href="#guide" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            </Link>
+            <Link to="#guide" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Premium Guide
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            </Link>
+            <Link to="#contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* Language Selector & CTA */}
@@ -67,7 +69,9 @@ const Header: React.FC = () => {
               </select>
               <Globe className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
             </div>
-            <button className="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+            <button
+              onClick={() => navigate("/quiz")}
+              className="cursor-pointer bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
               Start Free Trial
             </button>
           </div>
@@ -82,21 +86,21 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4">
-              <a href="#home" className="text-gray-700 hover:text-red-600 font-medium">
+              <Link to="/" className="text-gray-700 hover:text-red-600 font-medium">
                 Home
-              </a>
-              <a href="#pricing" className="text-gray-700 hover:text-red-600 font-medium">
+              </Link>
+              <Link to="#pricing" className="text-gray-700 hover:text-red-600 font-medium">
                 Pricing
-              </a>
-              <a href="#free-trial" className="text-gray-700 hover:text-red-600 font-medium">
+              </Link>
+              <Link to="/quiz" className="text-gray-700 hover:text-red-600 font-medium">
                 Free Trial
-              </a>
-              <a href="#guide" className="text-gray-700 hover:text-red-600 font-medium">
+              </Link>
+              <Link to="#guide" className="text-gray-700 hover:text-red-600 font-medium">
                 Premium Guide
-              </a>
-              <a href="#contact" className="text-gray-700 hover:text-red-600 font-medium">
+              </Link>
+              <Link to="#contact" className="text-gray-700 hover:text-red-600 font-medium">
                 Contact
-              </a>
+              </Link>
               <div className="pt-4 border-t border-gray-200">
                 <select
                   value={selectedLanguage}
@@ -109,7 +113,9 @@ const Header: React.FC = () => {
                     </option>
                   ))}
                 </select>
-                <button className="w-full bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                <button
+                  onClick={() => navigate("/quiz")}
+                  className="w-full cursor-pointer bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
                   Start Free Trial
                 </button>
               </div>
