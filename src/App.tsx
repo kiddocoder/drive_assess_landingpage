@@ -5,6 +5,9 @@ import "./index.css";
 import Home from "./pages/Home";
 import AppLayout from "./layouts/AppLayout";
 import TakeQuiz from "./pages/TakeQuiz";
+import { useEffect, useMemo } from "react";
+import SocketService from "./services/socket";
+import { FingerprintProvider } from "./contexts/FingerprintContext";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +27,25 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+
+  const socket = useMemo(() => SocketService.getInstance(), [])
+  useEffect(() => {
+    const prevConnected = socket.isConnected()
+    socket.connect(localStorage.getItem("jwt_token") || "kiddo")
+    return () => {
+      if (!prevConnected && socket.isConnected()) {
+        socket.disconnect()
+      }
+    }
+  }, [socket])
+
+
+
   return (
-    <RouterProvider router={router} />
+    <FingerprintProvider>
+      <RouterProvider router={router} />
+    </FingerprintProvider>
+
   )
 }
 

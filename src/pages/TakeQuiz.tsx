@@ -18,29 +18,27 @@ import {
     Timer,
     ChevronLeft,
     ChevronRight,
-    Settings,
-    Map,
-    Shield,
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { fetchAllCategories, fetchUserQuestions } from "../api/categories"
 
 // Real road sign images
-const SIGN_IMAGES = {
-    STOP_SIGN: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Stop_sign.svg/120px-Stop_sign.svg.png",
-    YIELD_SIGN: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Yield.svg/120px-Yield.svg.png",
-    CURVE_SIGN: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Road-sign-curve.svg/120px-Road-sign-curve.svg.png",
-    SPEED_LIMIT: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/A1a-50.svg/120px-A1a-50.svg.png",
-    CONSTRUCTION: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Road_construction_icon.svg/120px-Road_construction_icon.svg.png"
-}
+// const SIGN_IMAGES = {
+//     STOP_SIGN: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Stop_sign.svg/120px-Stop_sign.svg.png",
+//     YIELD_SIGN: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Yield.svg/120px-Yield.svg.png",
+//     CURVE_SIGN: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Road-sign-curve.svg/120px-Road-sign-curve.svg.png",
+//     SPEED_LIMIT: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/A1a-50.svg/120px-A1a-50.svg.png",
+//     CONSTRUCTION: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Road_construction_icon.svg/120px-Road_construction_icon.svg.png"
+// }
 
 // Question Categories
-const CATEGORIES = {
-    ROAD_SIGNS: "Road Signs & Signals",
-    TRAFFIC_RULES: "Traffic Rules & Laws",
-    PARKING: "Parking & Positioning",
-    SAFETY: "Safety & Emergency",
-    VEHICLE_OPERATION: "Vehicle Operation",
-}
+// const CATEGORIES = {
+//     ROAD_SIGNS: "Road Signs & Signals",
+//     TRAFFIC_RULES: "Traffic Rules & Laws",
+//     PARKING: "Parking & Positioning",
+//     SAFETY: "Safety & Emergency",
+//     VEHICLE_OPERATION: "Vehicle Operation",
+// }
 
 // Quiz Modes
 const QUIZ_MODES = {
@@ -51,205 +49,205 @@ const QUIZ_MODES = {
 }
 
 // Comprehensive Question Database with real images
-const QUIZ_QUESTIONS = [
-    // Road Signs & Signals
-    {
-        id: 1,
-        category: CATEGORIES.ROAD_SIGNS,
-        question: "What does this traffic sign indicate?",
-        hasImage: true,
-        imageUrl: SIGN_IMAGES.STOP_SIGN,
-        options: ["Yield to traffic", "Stop completely", "Slow down", "No entry"],
-        correctAnswer: 1,
-        explanation: "The red octagonal STOP sign requires drivers to come to a complete stop before proceeding.",
-        difficulty: "easy",
-    },
-    {
-        id: 2,
-        category: CATEGORIES.ROAD_SIGNS,
-        question: "This sign indicates:",
-        hasImage: true,
-        imageUrl: SIGN_IMAGES.YIELD_SIGN,
-        options: ["Stop and wait", "Yield right-of-way", "Merge ahead", "Construction zone"],
-        correctAnswer: 1,
-        explanation: "The triangular YIELD sign means you must give right-of-way to other traffic and pedestrians.",
-        difficulty: "easy",
-    },
-    {
-        id: 3,
-        category: CATEGORIES.ROAD_SIGNS,
-        question: "What does this warning sign mean?",
-        hasImage: true,
-        imageUrl: SIGN_IMAGES.CURVE_SIGN,
-        options: ["Sharp turn ahead", "Road narrows", "Hill ahead", "Intersection ahead"],
-        correctAnswer: 0,
-        explanation: "This diamond-shaped yellow sign warns of a sharp curve or turn in the road ahead.",
-        difficulty: "normal",
-    },
-    {
-        id: 4,
-        category: CATEGORIES.ROAD_SIGNS,
-        question: "This regulatory sign means:",
-        hasImage: true,
-        imageUrl: SIGN_IMAGES.SPEED_LIMIT,
-        options: ["Minimum speed 50 km/h", "Maximum speed 50 km/h", "Recommended speed 50 km/h", "Average speed 50 km/h"],
-        correctAnswer: 1,
-        explanation: "White circular signs with numbers indicate the maximum speed limit allowed on that road.",
-        difficulty: "easy",
-    },
-    {
-        id: 16,
-        category: CATEGORIES.ROAD_SIGNS,
-        question: "This construction sign indicates:",
-        hasImage: true,
-        imageUrl: SIGN_IMAGES.CONSTRUCTION,
-        options: ["Road work ahead", "Detour required", "Lane closure", "Reduced speed zone"],
-        correctAnswer: 0,
-        explanation: "Orange diamond signs indicate construction zones and warn of workers or equipment ahead.",
-        difficulty: "easy",
-    },
+// const QUIZ_QUESTIONS = [
+//     // Road Signs & Signals
+//     {
+//         id: 1,
+//         category: CATEGORIES.ROAD_SIGNS,
+//         question: "What does this traffic sign indicate?",
+//         hasImage: true,
+//         imageUrl: SIGN_IMAGES.STOP_SIGN,
+//         options: ["Yield to traffic", "Stop completely", "Slow down", "No entry"],
+//         correctAnswer: 1,
+//         explanation: "The red octagonal STOP sign requires drivers to come to a complete stop before proceeding.",
+//         difficulty: "easy",
+//     },
+//     {
+//         id: 2,
+//         category: CATEGORIES.ROAD_SIGNS,
+//         question: "This sign indicates:",
+//         hasImage: true,
+//         imageUrl: SIGN_IMAGES.YIELD_SIGN,
+//         options: ["Stop and wait", "Yield right-of-way", "Merge ahead", "Construction zone"],
+//         correctAnswer: 1,
+//         explanation: "The triangular YIELD sign means you must give right-of-way to other traffic and pedestrians.",
+//         difficulty: "easy",
+//     },
+//     {
+//         id: 3,
+//         category: CATEGORIES.ROAD_SIGNS,
+//         question: "What does this warning sign mean?",
+//         hasImage: true,
+//         imageUrl: SIGN_IMAGES.CURVE_SIGN,
+//         options: ["Sharp turn ahead", "Road narrows", "Hill ahead", "Intersection ahead"],
+//         correctAnswer: 0,
+//         explanation: "This diamond-shaped yellow sign warns of a sharp curve or turn in the road ahead.",
+//         difficulty: "normal",
+//     },
+//     {
+//         id: 4,
+//         category: CATEGORIES.ROAD_SIGNS,
+//         question: "This regulatory sign means:",
+//         hasImage: true,
+//         imageUrl: SIGN_IMAGES.SPEED_LIMIT,
+//         options: ["Minimum speed 50 km/h", "Maximum speed 50 km/h", "Recommended speed 50 km/h", "Average speed 50 km/h"],
+//         correctAnswer: 1,
+//         explanation: "White circular signs with numbers indicate the maximum speed limit allowed on that road.",
+//         difficulty: "easy",
+//     },
+//     {
+//         id: 16,
+//         category: CATEGORIES.ROAD_SIGNS,
+//         question: "This construction sign indicates:",
+//         hasImage: true,
+//         imageUrl: SIGN_IMAGES.CONSTRUCTION,
+//         options: ["Road work ahead", "Detour required", "Lane closure", "Reduced speed zone"],
+//         correctAnswer: 0,
+//         explanation: "Orange diamond signs indicate construction zones and warn of workers or equipment ahead.",
+//         difficulty: "easy",
+//     },
 
-    // Traffic Rules & Laws
-    {
-        id: 5,
-        category: CATEGORIES.TRAFFIC_RULES,
-        question: "What is the basic speed limit outside city limits on a primary highway?",
-        options: ["100 km/h", "90 km/h", "110 km/h", "80 km/h"],
-        correctAnswer: 0,
-        explanation: "The basic speed limit on primary highways outside urban areas is 100 km/h unless otherwise posted.",
-        difficulty: "normal",
-    },
-    {
-        id: 6,
-        category: CATEGORIES.TRAFFIC_RULES,
-        question: "A driver's license is suspended when they accumulate:",
-        options: ["15 demerit points", "8 demerit points", "5 demerit points", "12 demerit points"],
-        correctAnswer: 0,
-        explanation: "A fully licensed driver faces suspension when they accumulate 15 demerit points.",
-        difficulty: "normal",
-    },
-    {
-        id: 7,
-        category: CATEGORIES.TRAFFIC_RULES,
-        question: "When approaching an intersection with a green right-turn arrow and red light:",
-        options: [
-            "Must stop and wait for green light",
-            "May go straight through",
-            "May proceed in arrow direction when safe",
-            "May turn left without stopping",
-        ],
-        correctAnswer: 2,
-        explanation: "A green arrow means you may proceed in the direction of the arrow when it's safe, even if the main light is red.",
-        difficulty: "hard",
-    },
-    {
-        id: 8,
-        category: CATEGORIES.TRAFFIC_RULES,
-        question: "A flashing yellow traffic light means:",
-        options: [
-            "Stop until light stops flashing",
-            "Proceed with caution",
-            "Light will turn red",
-            "Light will turn green",
-        ],
-        correctAnswer: 1,
-        explanation: "A flashing yellow light means proceed with caution after yielding to pedestrians and other traffic.",
-        difficulty: "normal",
-    },
-    {
-        id: 15,
-        category: CATEGORIES.TRAFFIC_RULES,
-        question: "At an uncontrolled intersection, when two vehicles arrive simultaneously:",
-        options: [
-            "Vehicle on left has right-of-way",
-            "Vehicle on right has right-of-way",
-            "Larger vehicle has right-of-way",
-            "First to flash lights has right-of-way",
-        ],
-        correctAnswer: 1,
-        explanation: "At uncontrolled intersections, the vehicle on the right has the right-of-way when arriving simultaneously.",
-        difficulty: "hard",
-    },
+//     // Traffic Rules & Laws
+//     {
+//         id: 5,
+//         category: CATEGORIES.TRAFFIC_RULES,
+//         question: "What is the basic speed limit outside city limits on a primary highway?",
+//         options: ["100 km/h", "90 km/h", "110 km/h", "80 km/h"],
+//         correctAnswer: 0,
+//         explanation: "The basic speed limit on primary highways outside urban areas is 100 km/h unless otherwise posted.",
+//         difficulty: "normal",
+//     },
+//     {
+//         id: 6,
+//         category: CATEGORIES.TRAFFIC_RULES,
+//         question: "A driver's license is suspended when they accumulate:",
+//         options: ["15 demerit points", "8 demerit points", "5 demerit points", "12 demerit points"],
+//         correctAnswer: 0,
+//         explanation: "A fully licensed driver faces suspension when they accumulate 15 demerit points.",
+//         difficulty: "normal",
+//     },
+//     {
+//         id: 7,
+//         category: CATEGORIES.TRAFFIC_RULES,
+//         question: "When approaching an intersection with a green right-turn arrow and red light:",
+//         options: [
+//             "Must stop and wait for green light",
+//             "May go straight through",
+//             "May proceed in arrow direction when safe",
+//             "May turn left without stopping",
+//         ],
+//         correctAnswer: 2,
+//         explanation: "A green arrow means you may proceed in the direction of the arrow when it's safe, even if the main light is red.",
+//         difficulty: "hard",
+//     },
+//     {
+//         id: 8,
+//         category: CATEGORIES.TRAFFIC_RULES,
+//         question: "A flashing yellow traffic light means:",
+//         options: [
+//             "Stop until light stops flashing",
+//             "Proceed with caution",
+//             "Light will turn red",
+//             "Light will turn green",
+//         ],
+//         correctAnswer: 1,
+//         explanation: "A flashing yellow light means proceed with caution after yielding to pedestrians and other traffic.",
+//         difficulty: "normal",
+//     },
+//     {
+//         id: 15,
+//         category: CATEGORIES.TRAFFIC_RULES,
+//         question: "At an uncontrolled intersection, when two vehicles arrive simultaneously:",
+//         options: [
+//             "Vehicle on left has right-of-way",
+//             "Vehicle on right has right-of-way",
+//             "Larger vehicle has right-of-way",
+//             "First to flash lights has right-of-way",
+//         ],
+//         correctAnswer: 1,
+//         explanation: "At uncontrolled intersections, the vehicle on the right has the right-of-way when arriving simultaneously.",
+//         difficulty: "hard",
+//     },
 
-    // Vehicle Operation
-    {
-        id: 9,
-        category: CATEGORIES.VEHICLE_OPERATION,
-        question: "When backing a passenger vehicle to the left, a driver should:",
-        options: [
-            "Look in rear-view mirror only",
-            "Look over right shoulder",
-            "Look over left shoulder with occasional front glances",
-            "Use mirrors without shoulder checking",
-        ],
-        correctAnswer: 2,
-        explanation: "When backing left, look over your left shoulder with occasional glances to the front for awareness.",
-        difficulty: "normal",
-    },
-    {
-        id: 10,
-        category: CATEGORIES.VEHICLE_OPERATION,
-        question: "The 2-second rule for following distance:",
-        options: [
-            "Is only accurate on highways",
-            "Is not accurate above 100 km/h",
-            "Is accurate at any speed",
-            "Is not accurate below 30 km/h",
-        ],
-        correctAnswer: 2,
-        explanation: "The 2-second rule provides a safe following distance at any speed under normal conditions.",
-        difficulty: "normal",
-    },
+//     // Vehicle Operation
+//     {
+//         id: 9,
+//         category: CATEGORIES.VEHICLE_OPERATION,
+//         question: "When backing a passenger vehicle to the left, a driver should:",
+//         options: [
+//             "Look in rear-view mirror only",
+//             "Look over right shoulder",
+//             "Look over left shoulder with occasional front glances",
+//             "Use mirrors without shoulder checking",
+//         ],
+//         correctAnswer: 2,
+//         explanation: "When backing left, look over your left shoulder with occasional glances to the front for awareness.",
+//         difficulty: "normal",
+//     },
+//     {
+//         id: 10,
+//         category: CATEGORIES.VEHICLE_OPERATION,
+//         question: "The 2-second rule for following distance:",
+//         options: [
+//             "Is only accurate on highways",
+//             "Is not accurate above 100 km/h",
+//             "Is accurate at any speed",
+//             "Is not accurate below 30 km/h",
+//         ],
+//         correctAnswer: 2,
+//         explanation: "The 2-second rule provides a safe following distance at any speed under normal conditions.",
+//         difficulty: "normal",
+//     },
 
-    // Safety & Emergency
-    {
-        id: 11,
-        category: CATEGORIES.SAFETY,
-        question: "When approached by an emergency vehicle with siren, you must:",
-        options: [
-            "Continue at reduced speed",
-            "Turn on hazard lights",
-            "Stop only if emergency vehicle has difficulty passing",
-            "Drive to right curb/edge and stop",
-        ],
-        correctAnswer: 3,
-        explanation: "You must pull over to the right side of the road and stop to allow emergency vehicles to pass safely.",
-        difficulty: "easy",
-    },
-    {
-        id: 12,
-        category: CATEGORIES.SAFETY,
-        question: "Seat belts must be worn:",
-        options: ["Only with passengers", "Properly at all times", "Only at highway speeds", "Only in the city"],
-        correctAnswer: 1,
-        explanation: "Law requires seat belts to be worn properly at all times while the vehicle is in motion.",
-        difficulty: "easy",
-    },
+//     // Safety & Emergency
+//     {
+//         id: 11,
+//         category: CATEGORIES.SAFETY,
+//         question: "When approached by an emergency vehicle with siren, you must:",
+//         options: [
+//             "Continue at reduced speed",
+//             "Turn on hazard lights",
+//             "Stop only if emergency vehicle has difficulty passing",
+//             "Drive to right curb/edge and stop",
+//         ],
+//         correctAnswer: 3,
+//         explanation: "You must pull over to the right side of the road and stop to allow emergency vehicles to pass safely.",
+//         difficulty: "easy",
+//     },
+//     {
+//         id: 12,
+//         category: CATEGORIES.SAFETY,
+//         question: "Seat belts must be worn:",
+//         options: ["Only with passengers", "Properly at all times", "Only at highway speeds", "Only in the city"],
+//         correctAnswer: 1,
+//         explanation: "Law requires seat belts to be worn properly at all times while the vehicle is in motion.",
+//         difficulty: "easy",
+//     },
 
-    // Parking & Positioning
-    {
-        id: 13,
-        category: CATEGORIES.PARKING,
-        question: "When parallel parking, wheels closest to curb must be within:",
-        options: ["80 centimetres", "30 centimetres", "10 centimetres", "50 centimetres"],
-        correctAnswer: 3,
-        explanation: "When parallel parking, your wheels must be within 50 centimetres (about 20 inches) of the curb.",
-        difficulty: "hard",
-    },
-    {
-        id: 14,
-        category: CATEGORIES.PARKING,
-        question: "Minimum distance from a fire hydrant a vehicle must be parked:",
-        options: ["3 metres", "4 metres", "2 metres", "5 metres"],
-        correctAnswer: 0,
-        explanation: "Vehicles must be parked at least 3 metres away from fire hydrants to ensure emergency access.",
-        difficulty: "normal",
-    },
-]
+//     // Parking & Positioning
+//     {
+//         id: 13,
+//         category: CATEGORIES.PARKING,
+//         question: "When parallel parking, wheels closest to curb must be within:",
+//         options: ["80 centimetres", "30 centimetres", "10 centimetres", "50 centimetres"],
+//         correctAnswer: 3,
+//         explanation: "When parallel parking, your wheels must be within 50 centimetres (about 20 inches) of the curb.",
+//         difficulty: "hard",
+//     },
+//     {
+//         id: 14,
+//         category: CATEGORIES.PARKING,
+//         question: "Minimum distance from a fire hydrant a vehicle must be parked:",
+//         options: ["3 metres", "4 metres", "2 metres", "5 metres"],
+//         correctAnswer: 0,
+//         explanation: "Vehicles must be parked at least 3 metres away from fire hydrants to ensure emergency access.",
+//         difficulty: "normal",
+//     },
+// ]
 
 interface QuizState {
     mode: keyof typeof QUIZ_MODES | null
-    category: string | null
+    category: any
     currentQuestionIndex: number
     selectedAnswer: number | null
     showResult: boolean
@@ -259,7 +257,7 @@ interface QuizState {
     quizStarted: boolean
     timeLeft: number
     timerActive: boolean
-    questions: typeof QUIZ_QUESTIONS
+    questions: any[]
 }
 
 const TakeQuiz: React.FC = () => {
@@ -282,6 +280,19 @@ const TakeQuiz: React.FC = () => {
     const currentQuestion = state.questions[state.currentQuestionIndex]
     const modeConfig = state.mode ? QUIZ_MODES[state.mode] : null
 
+    const [categories, setCategories] = useState<any>([]);
+    const [questionsQuiz, setQuestionQuiz] = useState([])
+
+    useEffect(() => {
+        const fetchCategories = async () => await fetchAllCategories().then(data => setCategories(data))
+        const fetchQuestions = async () => await fetchUserQuestions().then(data => setQuestionQuiz(data))
+
+        fetchCategories();
+        fetchQuestions();
+    }, [])
+
+
+
     // Auto-submit when timer ends
     useEffect(() => {
         let interval: any = null
@@ -295,12 +306,17 @@ const TakeQuiz: React.FC = () => {
         return () => clearInterval(interval)
     }, [state.timerActive, state.timeLeft, state.showResult, state.quizStarted])
 
-    const startQuiz = (mode: keyof typeof QUIZ_MODES, category?: string) => {
-        let filteredQuestions = [...QUIZ_QUESTIONS]
+    const startQuiz = (mode: keyof typeof QUIZ_MODES, category?: any) => {
+        let filteredQuestions = [...questionsQuiz]
 
         let selectedCategory: string | null = null
         if (category && category !== "ALL") {
-            filteredQuestions = QUIZ_QUESTIONS.filter((q) => q.category === category)
+            filteredQuestions = questionsQuiz.filter((q: any) => q.category._id === category._id)
+            selectedCategory = category
+        }
+
+        if (mode) {
+            filteredQuestions = questionsQuiz.filter((q: any) => q.difficulty === mode.toLowerCase())
             selectedCategory = category
         }
 
@@ -417,22 +433,20 @@ const TakeQuiz: React.FC = () => {
                     <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
                         <h2 className="text-xl font-bold mb-4 text-center">Or Choose by Category</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                            {Object.entries(CATEGORIES).map(([key, category]) => (
+                            {categories?.data?.map((category: any) => (
                                 <button
-                                    key={key}
+                                    key={category._id}
                                     onClick={() => startQuiz("NORMAL", category)}
                                     className="bg-white hover:bg-gray-50 rounded-lg p-3 text-left transition-all border border-gray-200"
                                 >
                                     <div className="flex items-center space-x-2">
-                                        {key === "ROAD_SIGNS" && <Shield className="w-5 h-5 text-yellow-500" />}
-                                        {key === "TRAFFIC_RULES" && <BookOpen className="w-5 h-5 text-blue-500" />}
-                                        {key === "PARKING" && <Map className="w-5 h-5 text-green-500" />}
-                                        {key === "SAFETY" && <Heart className="w-5 h-5 text-red-500" />}
-                                        {key === "VEHICLE_OPERATION" && <Settings className="w-5 h-5 text-purple-500" />}
-                                        <span className="font-medium">{category}</span>
+                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl`}>
+                                            {category.icon}
+                                        </div>
+                                        <span className="font-medium">{category.name}</span>
                                     </div>
                                 </button>
-                            ))}
+                            )) || []}
                         </div>
                     </div>
                 </div>
@@ -546,7 +560,7 @@ const TakeQuiz: React.FC = () => {
                                 </span>
                                 <span className="text-sm">{modeConfig?.name}</span>
                                 {state.category && state.category !== "ALL" && (
-                                    <span className="bg-white/20 px-2 py-1 rounded text-xs">{state.category}</span>
+                                    <span className="bg-white/20 px-2 py-1 rounded text-xs">{state.category.name}</span>
                                 )}
                             </div>
 
@@ -599,7 +613,7 @@ const TakeQuiz: React.FC = () => {
 
                         {/* Answer Options */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-                            {currentQuestion?.options.map((option, index) => {
+                            {currentQuestion?.options.map((option: any, index: any) => {
                                 let optionClass = "p-4 rounded-lg border transition-colors text-left cursor-pointer"
 
                                 if (state.showResult) {
