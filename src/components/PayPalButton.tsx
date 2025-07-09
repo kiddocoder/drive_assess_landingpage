@@ -17,7 +17,7 @@ export const PayPalButton: React.FC<PayPalButtonProps> = ({ amount, onSuccess })
         >
             <PayPalButtons
                 style={{ layout: "vertical" }}
-                createOrder={(data: any, actions: any) => {
+                createOrder={(actions: any) => {
                     return actions.order.create({
                         purchase_units: [
                             {
