@@ -39,7 +39,7 @@ const Header: React.FC = () => {
             <Link to="/" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Home
             </Link>
-            <Link to="#pricing" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            <Link to="/pricing" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Pricing
             </Link>
             <Link to="/quiz" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
               <Link to="/" className="text-gray-700 hover:text-red-600 font-medium">
                 Home
               </Link>
-              <Link to="#pricing" className="text-gray-700 hover:text-red-600 font-medium">
+              <Link to="pricing" className="text-gray-700 hover:text-red-600 font-medium">
                 Pricing
               </Link>
               <Link to="/quiz" className="text-gray-700 hover:text-red-600 font-medium">

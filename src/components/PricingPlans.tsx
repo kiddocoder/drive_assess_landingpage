@@ -1,11 +1,13 @@
 import type React from "react"
 import { Check, Star, BookOpen, Clock, CreditCard } from "lucide-react"
+import { useNavigate } from "react-router-dom"
+
 
 const PricingPlans: React.FC = () => {
   const plans = [
     {
       name: "3-Day Access",
-      price: "$13",
+      price: "13",
       duration: "3 days",
       popular: false,
       features: [
@@ -21,7 +23,7 @@ const PricingPlans: React.FC = () => {
     },
     {
       name: "4-Day Access",
-      price: "$14",
+      price: "14",
       duration: "4 days",
       popular: true,
       features: [
@@ -37,7 +39,7 @@ const PricingPlans: React.FC = () => {
     },
     {
       name: "Premium Guide",
-      price: "$45",
+      price: "45",
       duration: "Lifetime",
       popular: false,
       features: [
@@ -52,6 +54,8 @@ const PricingPlans: React.FC = () => {
       buttonColor: "bg-green-600 hover:bg-green-700",
     },
   ]
+
+  const navigate = useNavigate();
 
   return (
     <section id="pricing" className="py-20 bg-white">
@@ -82,8 +86,8 @@ const PricingPlans: React.FC = () => {
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2 font-onest">{plan.name}</h3>
                 <div className="mb-4">
-                  <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-                  <span className="text-gray-600 ml-2">CAD</span>
+                  $<span className="text-5xl font-bold text-gray-900">{plan.price}</span>
+                  <span className="text-gray-600 ml-2">USD</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2 text-gray-600">
                   <Clock className="w-4 h-4" />
@@ -101,7 +105,8 @@ const PricingPlans: React.FC = () => {
               </ul>
 
               <button
-                className={`w-full ${plan.buttonColor} text-white py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2`}
+                onClick={() => navigate(`/checkout?amount=${plan.price}`)}
+                className={`w-full cursor-pointer ${plan.buttonColor} text-white py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2`}
               >
                 {plan.name === "Premium Guide" ? <BookOpen className="w-5 h-5" /> : <CreditCard className="w-5 h-5" />}
                 <span>{plan.name === "Premium Guide" ? "Buy Guide Now" : "Get Started"}</span>

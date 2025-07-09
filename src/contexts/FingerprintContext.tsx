@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
-import { API } from '../config/axios';
 import axios from 'axios';
 
 type FingerprintContextType = {

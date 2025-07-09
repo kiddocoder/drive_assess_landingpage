@@ -8,6 +8,8 @@ import TakeQuiz from "./pages/TakeQuiz";
 import { useEffect, useMemo } from "react";
 import SocketService from "./services/socket";
 import { FingerprintProvider } from "./contexts/FingerprintContext";
+import { Pricing } from "./pages/Pricing";
+import Checkout from "./pages/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -18,9 +20,17 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/pricing",
+        element: <Pricing />,
+      },
+      {
         path: "/quiz",
         element: <TakeQuiz />
-      }
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
     ]
   }
 
