@@ -26,7 +26,11 @@ export const FingerprintProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
 
-    const GEO = async () => await API.get('https://ipinfo.io/geo').then((res) => {
+    const GEO = async () => await API.get('https://ipinfo.io/geo', {
+      headers: {
+        Authorization: 'Bearer ecf2e05b5b7e74'
+      }
+    }).then((res) => {
       const geo = res.data;
       setState({
         ...state,
