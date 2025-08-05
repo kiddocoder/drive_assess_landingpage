@@ -2,21 +2,28 @@
 
 import type React from "react"
 import { Play, BookOpen, CreditCard } from "lucide-react"
-import DriveMap from "@/assets/car_map.jpg"
+import Image from "next/image"
 import Link from "next/link"
+import DriveMap from "@/assets/car_map.jpg"
 
 const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative bg-gradient-to-br from-blue-600/95 via-blue-700/95 to-blue-800/95 text-white overflow-hidden"
-      style={{
-        backgroundImage: `url(${DriveMap})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundBlendMode: "multiply"
-      }}
+      className="relative bg-transparent text-white overflow-hidden"
     >
+      {/* Background Image with Next.js Image component */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src={DriveMap}
+          alt="Road map background"
+          fill
+          className="object-cover"
+          quality={80}
+          priority
+        />
+      </div>
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -67,10 +74,13 @@ const Hero: React.FC = () => {
           {/* Right Content - Hero Image */}
           <div className="relative">
             <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border-4 border-white/20">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
                 alt="Person driving a car in Canadian setting"
+                width={600}
+                height={500}
                 className="w-full h-auto max-h-[500px] object-cover"
+                priority
               />
             </div>
 
