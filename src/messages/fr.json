@@ -1,0 +1,39 @@
+{
+"App":{
+"Title": "Josnet Drive",
+  "Description": "Josnet Drive is a secure and reliable cloud storage solution that offers seamless file management and sharing capabilities.",
+  "Keywords": "cloud storage, file management, secure storage, Josnet Drive",
+  "Author": "Josnet Team",
+  "Copyright": "© 2023 Josnet Drive. All rights reserved."
+},
+  "Header": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "quiz": "Free Trial",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "Hero": {
+    "title": "Entraînez-vous comme si c'était votre <Proof>vrai examen de conduite</Proof> — 100% style canadien !",
+    "subtitle": "Questions d'échantillon gratuites. Résultats rapides. Vrai succès.",
+    "buttons": {
+      "startTrial": "Commencer l'essai gratuit",
+      "premiumGuide": "Guide Premium"
+    },
+    "trustIndicators": {
+      "drivers": "Fiable pour 50 000+ nouveaux conducteurs",
+      "languages": "24+ langues supportées",
+      "questions": "Questions réelles d'examen"
+    },
+    "stats": {
+      "passRate": "Taux de réussite",
+      "canadaOnly": "Canada seulement"
+    }
+  },
+ "Footer": {
+        "contact": "Contact us",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+}
+}

@@ -14,8 +14,22 @@
     "contact": "Contact",
     "language": "Language"
   },
-  "Hero":{
-
+  "Hero": {
+    "title": "Practice like it's your <Proof>real driving test</Proof> — 100% Canadian style!",
+    "subtitle": "Free sample questions. Fast results. Real success.",
+    "buttons": {
+      "startTrial": "Start Free Trial",
+      "premiumGuide": "Premium Guide"
+    },
+    "trustIndicators": {
+      "drivers": "Trusted by 50,000+ new drivers",
+      "languages": "24+ languages supported",
+      "questions": "Real exam questions"
+    },
+    "stats": {
+      "passRate": "Pass Rate",
+      "canadaOnly": "Canada Only"
+    }
   },
  "Footer": {
         "contact": "Contact us",

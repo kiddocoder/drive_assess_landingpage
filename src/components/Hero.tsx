@@ -1,12 +1,15 @@
 "use client"
 
 import type React from "react"
-import { Play, BookOpen, CreditCard } from "lucide-react"
+import { Play, BookOpen } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import DriveMap from "@/assets/car_map.jpg"
+import { useTranslations } from "next-intl"
 
 const Hero: React.FC = () => {
+  const t = useTranslations("Hero")
+
   return (
     <section
       id="home"
@@ -29,28 +32,25 @@ const Hero: React.FC = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-onest">
-              Practice like it's your <span className="text-yellow-400">real driving test</span> — 100% Canadian style!
+              {t.rich("title", {
+                Proof: (chunks) => <span className="text-yellow-400">{chunks}</span>
+              })}
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 text-blue-100 font-nunito">
-              Free sample questions. Fast results. Real success.
+              {t("subtitle")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 flex-wrap">
               <Link href="/quiz"
                 className="whitespace-nowrap bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                 <Play className="w-5 h-5" />
-                <span>Start Free Trial</span>
+                <span>{t("buttons.startTrial")}</span>
               </Link>
-
-              {/* <Link href="/pricing" className="whitespace-nowrap bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
-                <CreditCard className="w-5 h-5" />
-                <span>Buy Full Access</span>
-              </Link> */}
 
               <button className="whitespace-nowrap bg-white hover:bg-gray-100 text-blue-800 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                 <BookOpen className="w-5 h-5" />
-                <span>Premium Guide</span>
+                <span>{t("buttons.premiumGuide")}</span>
               </button>
             </div>
 
@@ -58,15 +58,15 @@ const Hero: React.FC = () => {
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 text-sm text-blue-200">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Trusted by 50,000+ new drivers</span>
+                <span>{t("trustIndicators.drivers")}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>24+ languages supported</span>
+                <span>{t("trustIndicators.languages")}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Real exam questions</span>
+                <span>{t("trustIndicators.questions")}</span>
               </div>
             </div>
           </div>
@@ -87,13 +87,13 @@ const Hero: React.FC = () => {
             {/* Floating Elements */}
             <div className="absolute -top-4 -right-4 bg-white text-gray-800 p-4 rounded-xl shadow-lg animate-bounce z-20">
               <div className="text-2xl font-bold text-green-600">98%</div>
-              <div className="text-sm font-medium">Pass Rate</div>
+              <div className="text-sm font-medium">{t("stats.passRate")}</div>
             </div>
 
             <div className="absolute -bottom-4 -left-4 bg-red-600 text-white p-4 rounded-xl shadow-lg z-20">
               <div className="flex items-center gap-2">
                 <div className="text-lg font-bold">🇨🇦</div>
-                <div className="text-sm font-medium">Canada Only</div>
+                <div className="text-sm font-medium">{t("stats.canadaOnly")}</div>
               </div>
             </div>
           </div>
