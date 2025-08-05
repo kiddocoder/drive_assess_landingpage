@@ -1,26 +1,20 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer utilities {
+  .font-onest {
+    font-family: "Onest", sans-serif;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .font-nunito {
+    font-family: "Nunito Sans", sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  --color-canadianRed: #d32f2f;
+  --color-iceWhite: #f5f5f5;
+  --color-coolBlue: #1976d2;
+  --color-successGreen: #43a047;
+  --color-charcoal: #212121;
+  --color-grayText: #616161;
 }
