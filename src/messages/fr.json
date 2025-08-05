@@ -31,6 +31,60 @@
       "canadaOnly": "Canada seulement"
     }
   },
+  
+  "Pricing": {
+    "title": "Choisissez Votre Plan de Réussite",
+    "subtitle": "Options de tarification flexibles adaptées à votre emploi du temps et à votre budget. Tous les plans incluent notre garantie : réussissez votre test ou obtenez un remboursement.",
+    "plans": {
+      "threeDay": {
+        "name": "Accès 3 Jours",
+        "duration": "3 jours",
+        "features": [
+          "Accès complet à toutes les questions pratiques",
+          "Explications détaillées pour chaque réponse",
+          "Suivi de progression",
+          "Interface adaptée aux mobiles",
+          "Support client 24/7",
+          "Options multilingues"
+        ]
+      },
+      "fourDay": {
+        "name": "Accès 4 Jours",
+        "duration": "4 jours",
+        "features": [
+          "Tout inclus dans le plan 3 jours",
+          "Temps d'étude prolongé",
+          "Sessions pratiques supplémentaires",
+          "Support client prioritaire",
+          "Matériel d'étude bonus",
+          "Analyses de performance"
+        ]
+      },
+      "premium": {
+        "name": "Guide Premium",
+        "duration": "Accès à vie",
+        "features": [
+          "Guide d'étude numérique complet",
+          "Format PDF téléchargeable",
+          "Règles de route complètes",
+          "Référence des panneaux de signalisation",
+          "Stratégies pour passer le test",
+          "Accès à vie"
+        ]
+      }
+    },
+    "mostPopular": "Le Plus Populaire",
+    "saveText": "🔥 Économisez 1$ par rapport au tarif journalier",
+    "guarantee": {
+      "title": "Garantie de Remboursement à 100%",
+      "description": "Nous sommes tellement confiants en notre plateforme que si vous ne réussissez pas votre test de conduite après avoir utilisé nos documents, nous vous rembourserons. Sans poser de questions."
+    },
+    "buttons": {
+      "buyGuide": "Acheter le Guide",
+      "getStarted": "Commencer",
+      "redirecting": "Redirection vers le paiement..."
+    }
+  },
  "Footer": {
         "contact": "Contact us",
         "privacy": "Privacy Policy",

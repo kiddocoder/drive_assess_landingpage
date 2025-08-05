@@ -14,6 +14,7 @@
     "contact": "Contact",
     "language": "Language"
   },
+
   "Hero": {
     "title": "Practice like it's your <Proof>real driving test</Proof> — 100% Canadian style!",
     "subtitle": "Free sample questions. Fast results. Real success.",
@@ -29,6 +30,60 @@
     "stats": {
       "passRate": "Pass Rate",
       "canadaOnly": "Canada Only"
+    }
+  },
+  
+  "Pricing": {
+    "title": "Choose Your Success Plan",
+    "subtitle": "Flexible pricing options designed to fit your study schedule and budget. All plans include our guarantee: pass your test or get your money back.",
+    "plans": {
+      "threeDay": {
+        "name": "3-Day Access",
+        "duration": "3 days",
+        "features": [
+          "Full access to all practice questions",
+          "Detailed explanations for each answer",
+          "Progress tracking",
+          "Mobile-friendly interface",
+          "24/7 customer support",
+          "Multiple language options"
+        ]
+      },
+      "fourDay": {
+        "name": "4-Day Access",
+        "duration": "4 days",
+        "features": [
+          "Everything in 3-day plan",
+          "Extended study time",
+          "Additional practice sessions",
+          "Priority customer support",
+          "Bonus study materials",
+          "Performance analytics"
+        ]
+      },
+      "premium": {
+        "name": "Premium Guide",
+        "duration": "Lifetime",
+        "features": [
+          "Complete digital study guide",
+          "Downloadable PDF format",
+          "Comprehensive road rules",
+          "Traffic signs reference",
+          "Test-taking strategies",
+          "Lifetime access"
+        ]
+      }
+    },
+    "mostPopular": "Most Popular",
+    "saveText": "🔥 Save $1 vs daily rate",
+    "guarantee": {
+      "title": "100% Money-Back Guarantee",
+      "description": "We're so confident in our platform that if you don't pass your driving test after using our materials, we'll refund your money. No questions asked."
+    },
+    "buttons": {
+      "buyGuide": "Buy Guide Now",
+      "getStarted": "Get Started",
+      "redirecting": "Redirecting to checkout..."
     }
   },
  "Footer": {
