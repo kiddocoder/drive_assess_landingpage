@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Menu, X, Globe } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/compat/router"
+import languages from "@/data/allowed_languages.json"
 
 
 const Header: React.FC = () => {
@@ -12,14 +13,6 @@ const Header: React.FC = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("EN")
   const router = useRouter()
 
-  const languages = [
-    { code: "EN", name: "English", flag: "🇨🇦" },
-    { code: "FR", name: "Français", flag: "🇫🇷" },
-    { code: "AR", name: "العربية", flag: "🇸🇦" },
-    { code: "ZH", name: "中文", flag: "🇨🇳" },
-    { code: "ES", name: "Español", flag: "🇪🇸" },
-    { code: "UR", name: "اردو", flag: "🇵🇰" },
-  ]
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
