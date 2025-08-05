@@ -43,10 +43,10 @@ const Hero: React.FC = () => {
                 <span>Start Free Trial</span>
               </Link>
 
-              <button className="whitespace-nowrap bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+              {/* <Link href="/pricing" className="whitespace-nowrap bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                 <CreditCard className="w-5 h-5" />
                 <span>Buy Full Access</span>
-              </button>
+              </Link> */}
 
               <button className="whitespace-nowrap bg-white hover:bg-gray-100 text-blue-800 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                 <BookOpen className="w-5 h-5" />
