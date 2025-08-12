@@ -48,10 +48,10 @@ const Hero: React.FC = () => {
                 <span>{t("buttons.startTrial")}</span>
               </Link>
 
-              <button className="whitespace-nowrap bg-white hover:bg-gray-100 text-blue-800 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+              <Link href="/premium-guide" className="whitespace-nowrap bg-white hover:bg-gray-100 text-blue-800 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                 <BookOpen className="w-5 h-5" />
                 <span>{t("buttons.premiumGuide")}</span>
-              </button>
+              </Link>
             </div>
 
             {/* Trust Indicators */}

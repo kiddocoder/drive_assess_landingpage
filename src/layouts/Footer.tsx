@@ -3,6 +3,7 @@
 import type React from "react"
 import { Mail, Phone, MapPin, Globe, ArrowUp } from "lucide-react"
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import facebookLogo from "@/assets/facebook_logo.png"
 import youtubeLogo from "@/assets/youtube_logo.png"
 import Link from "next/link"
@@ -10,6 +11,7 @@ import Image from "next/image"
 
 
 const Footer: React.FC = () => {
+  const t = useTranslations('Footer')
   const currentYear = new Date().getFullYear()
   const [showBackToTop, setShowBackToTop] = useState(false)
 
@@ -29,6 +31,22 @@ const Footer: React.FC = () => {
       behavior: "smooth"
     })
   }
+
+  const quickLinks = [
+    { name: t('quickLinks.home'), href: "/" },
+    { name: t('quickLinks.freeTrial'), href: "quiz" },
+    { name: t('quickLinks.pricingPlans'), href: "pricing" },
+    { name: t('quickLinks.premiumGuide'), href: "#guide" },
+    { name: t('quickLinks.successStories'), href: "#testimonials" },
+  ]
+
+  const supportLinks = [
+    t('support.helpCenter'),
+    t('support.contactUs'),
+    t('support.termsOfService'),
+    t('support.privacyPolicy'),
+    t('support.refundPolicy')
+  ]
 
   return (
     <footer className="bg-gray-900 text-white relative overflow-hidden">
@@ -61,7 +79,7 @@ const Footer: React.FC = () => {
         <button
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white p-3 rounded-full shadow-lg z-50 transition-all transform hover:scale-110"
-          aria-label="Back to top"
+          aria-label={t('backToTop')}
         >
           <ArrowUp className="w-6 h-6" />
         </button>
@@ -77,13 +95,13 @@ const Footer: React.FC = () => {
                 <span className="text-white font-bold text-xl">D</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold font-onest">Driving Assessment</h3>
-                <p className="text-red-400 font-semibold">for Canada</p>
+                <h3 className="text-xl font-bold font-onest">{t('companyName')}</h3>
+                <p className="text-red-400 font-semibold">{t('companyTagline')}</p>
               </div>
             </div>
 
             <p className="text-gray-300 mb-6 font-nunito">
-              Your trusted partner for Canadian driving test preparation. Helping new drivers succeed since day one.
+              {t('companyDescription')}
             </p>
 
             <div className="p-3  flex space-x-4">
@@ -98,20 +116,13 @@ const Footer: React.FC = () => {
                 </div>
               </Link>
             </div>
-
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-6 font-onest">Quick Links</h4>
+            <h4 className="text-lg font-bold mb-6 font-onest">{t('quickLinks.title')}</h4>
             <ul className="space-y-3">
-              {[
-                { name: "Home", href: "/" },
-                { name: "Free Trial", href: "quiz" },
-                { name: "Pricing Plans", href: "pricing" },
-                { name: "Premium Guide", href: "#guide" },
-                { name: "Success Stories", href: "#testimonials" },
-              ].map((link, index) => (
+              {quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
@@ -127,15 +138,9 @@ const Footer: React.FC = () => {
 
           {/* Support */}
           <div>
-            <h4 className="text-lg font-bold mb-6 font-onest">Support</h4>
+            <h4 className="text-lg font-bold mb-6 font-onest">{t('support.title')}</h4>
             <ul className="space-y-3">
-              {[
-                "Help Center",
-                "Contact Us",
-                "Terms of Service",
-                "Privacy Policy",
-                "Refund Policy"
-              ].map((item, index) => (
+              {supportLinks.map((item, index) => (
                 <li key={index}>
                   <Link
                     href="#"
@@ -151,19 +156,19 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-bold mb-6 font-onest">Contact Info</h4>
+            <h4 className="text-lg font-bold mb-6 font-onest">{t('contact.title')}</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Canada Only Service</span>
+                <span className="text-gray-300">{t('contact.location')}</span>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">support@drivingassessment.ca</span>
+                <span className="text-gray-300">{t('contact.email')}</span>
               </div>
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">1-800-DRIVE-CA</span>
+                <span className="text-gray-300">{t('contact.phone')}</span>
               </div>
             </div>
 
@@ -171,15 +176,15 @@ const Footer: React.FC = () => {
             <div className="mt-6">
               <h5 className="font-semibold mb-3 flex items-center space-x-2">
                 <Globe className="w-4 h-4" />
-                <span>Language</span>
+                <span>{t('contact.language')}</span>
               </h5>
               <select className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-red-500">
-                <option value="en">🇨🇦 English</option>
-                <option value="fr">🇫🇷 Français</option>
-                <option value="ar">🇸🇦 العربية</option>
-                <option value="zh">🇨🇳 中文</option>
-                <option value="es">🇪🇸 Español</option>
-                <option value="ur">🇵🇰 اردو</option>
+                <option value="en">{t('languages.english')}</option>
+                <option value="fr">{t('languages.french')}</option>
+                <option value="ar">{t('languages.arabic')}</option>
+                <option value="zh">{t('languages.chinese')}</option>
+                <option value="es">{t('languages.spanish')}</option>
+                <option value="ur">{t('languages.urdu')}</option>
               </select>
             </div>
           </div>
@@ -189,18 +194,18 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm font-nunito text-center md:text-left mb-4 md:mb-0">
-              © {currentYear} Driving Assessment for Canada. All rights reserved.
+              {t('bottom.copyright', { year: currentYear })}
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <span className="text-gray-400 text-sm flex items-center">
-                <span className="mr-1">🇨🇦</span> Made in Canada
+                {t('bottom.madeInCanada')}
               </span>
               <span className="text-gray-400 text-sm flex items-center">
-                <span className="mr-1">🔒</span> Secure & Private
+                {t('bottom.securePrivate')}
               </span>
               <span className="text-gray-400 text-sm flex items-center">
-                <span className="mr-1">✅</span> PIPEDA Compliant
+                {t('bottom.pipedaCompliant')}
               </span>
             </div>
           </div>
@@ -221,4 +226,4 @@ const Footer: React.FC = () => {
   )
 }
 
-export default Footer
+export default Footer;

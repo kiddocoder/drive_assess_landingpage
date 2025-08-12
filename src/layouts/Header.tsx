@@ -45,7 +45,7 @@ const Header: React.FC = () => {
             <Link href="/quiz" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Free Trial
             </Link>
-            <Link href="#guide" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+            <Link href="premium-guide" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
               Premium Guide
             </Link>
             <Link href="#contact" className="text-gray-700 hover:text-red-600 font-medium transition-colors">

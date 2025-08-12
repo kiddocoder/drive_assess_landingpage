@@ -1,53 +1,53 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { CreditCard, BookOpen, FileCheck, Trophy } from "lucide-react"
-import { useRouter } from "next/compat/router"
+import { useTranslations } from "next-intl";
+import { CreditCard, BookOpen, FileCheck, Trophy } from "lucide-react";
+import { useRouter } from "next/compat/router";
 
 const HowItWorks: React.FC = () => {
+  const t = useTranslations("HowItWorks");
+  const router = useRouter();
+
   const steps = [
     {
       step: 1,
       icon: <CreditCard className="w-12 h-12 text-white" />,
-      title: "Choose a Plan",
-      description: "Select the study duration that fits your schedule - 3 days, 4 days, or get the premium guide.",
+      title: t("steps.choosePlan.title"),
+      description: t("steps.choosePlan.description"),
       color: "bg-blue-600",
     },
     {
       step: 2,
       icon: <BookOpen className="w-12 h-12 text-white" />,
-      title: "Answer Practice Questions",
-      description:
-        "Practice with real exam-style questions, get instant feedback, and learn from detailed explanations.",
+      title: t("steps.answerQuestions.title"),
+      description: t("steps.answerQuestions.description"),
       color: "bg-green-600",
     },
     {
       step: 3,
       icon: <FileCheck className="w-12 h-12 text-white" />,
-      title: "Read the Guide (Optional)",
-      description: "Enhance your knowledge with our comprehensive study guide covering all Canadian driving rules.",
+      title: t("steps.readGuide.title"),
+      description: t("steps.readGuide.description"),
       color: "bg-purple-600",
     },
     {
       step: 4,
       icon: <Trophy className="w-12 h-12 text-white" />,
-      title: "Pass the Real Test!",
-      description:
-        "Walk into your driving test with confidence and pass on your first try, just like thousands before you.",
+      title: t("steps.passTest.title"),
+      description: t("steps.passTest.description"),
       color: "bg-red-600",
     },
-  ]
-
-  const router = useRouter();
+  ];
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-onest">How It Works</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-onest">
+            {t("title")}
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-nunito">
-            Our proven 4-step process has helped over 50,000 new drivers pass their Canadian driving test. Simple,
-            effective, and guaranteed to work.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -75,9 +75,13 @@ const HowItWorks: React.FC = () => {
                       {step.step}
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 font-onest">{step.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 font-onest">
+                      {step.title}
+                    </h3>
 
-                    <p className="text-gray-600 leading-relaxed font-nunito">{step.description}</p>
+                    <p className="text-gray-600 leading-relaxed font-nunito">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -99,12 +103,18 @@ const HowItWorks: React.FC = () => {
                   </div>
 
                   {/* Connecting Line for Mobile */}
-                  {index < steps.length - 1 && <div className="w-1 h-16 bg-gray-300 mx-auto mt-4"></div>}
+                  {index < steps.length - 1 && (
+                    <div className="w-1 h-16 bg-gray-300 mx-auto mt-4"></div>
+                  )}
                 </div>
 
                 <div className="flex-1 pt-2">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-onest">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed font-nunito">{step.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-onest">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed font-nunito">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -114,25 +124,28 @@ const HowItWorks: React.FC = () => {
         {/* CTA Section */}
         <div className="mt-16 text-center">
           <div className="bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 font-onest">Ready to Start Your Journey?</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4 font-onest">
+              {t("cta.readyTitle")}
+            </h3>
             <p className="text-lg text-gray-600 mb-8 font-nunito">
-              Join thousands of successful drivers who chose our proven method. Start with our free trial today!
+              {t("cta.readySubtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => router?.push("/quiz")}
-                className="cursor-pointer bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105">
-                Start Free Trial
+                className="cursor-pointer bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105"
+              >
+                {t("cta.startTrial")}
               </button>
               <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105">
-                Choose Your Plan
+                {t("cta.choosePlan")}
               </button>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HowItWorks
+export default HowItWorks;

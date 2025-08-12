@@ -3,7 +3,8 @@
 import type React from "react"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/react-splide/css"
-import { Star, Quote } from "lucide-react"
+import { Star, Quote, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
@@ -68,6 +69,19 @@ const TestimonialsSection: React.FC = () => {
             Don't just take our word for it. Here's what thousands of successful drivers have to say about their
             experience with our platform.
           </p>
+        </div>
+
+        <div className="flex justify-end items-center">
+          <Link
+            href="/reviews"
+            aria-label="Drop your review"
+            title="Drop your review"
+            prefetch={false}
+            className="flex cursor-pointer bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors"
+          >
+            Clic to drop your review?
+            <ArrowRight className="ml-1" />
+          </Link>
         </div>
 
         <Splide

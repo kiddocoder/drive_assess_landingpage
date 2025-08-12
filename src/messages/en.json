@@ -86,9 +86,214 @@
       "redirecting": "Redirecting to checkout..."
     }
   },
+  "WhyChooseUs": {
+    "title": "Why Choose Our Platform?",
+    "subtitle": "Join thousands of successful drivers who chose the most trusted and comprehensive driving test preparation platform in Canada.",
+    "features": {
+      "trusted": {
+        "title": "Trusted by New Canadian Residents",
+        "description": "Over 50,000 immigrants and new drivers have successfully passed their tests using our platform."
+      },
+      "realQuestions": {
+        "title": "Real Exam Questions",
+        "description": "Our questions are modeled exactly on the official Canadian driving test format and content."
+      },
+      "languages": {
+        "title": "24+ Languages Available",
+        "description": "Study in your native language with support for Arabic, Chinese, French, Spanish, Urdu, and more."
+      },
+      "loginOptions": {
+        "title": "Simple Login Options",
+        "description": "Access with your phone number, email, or try sample questions without creating an account."
+      }
+    },
+    "stats": {
+      "successfulStudents": "Successful Students",
+      "passRate": "Pass Rate",
+      "languages": "Languages",
+      "practiceQuestions": "Practice Questions"
+    }
+  },
+  "FreeTrialSection": {
+    "title": "Try 3-4 Sample Questions Free!",
+    "subtitle": "Experience our platform with real practice questions. No signup required, no credit card needed. Just pure, authentic Canadian driving test preparation.",
+    "features": {
+      "realQuestions": "Real exam-style questions",
+      "instantFeedback": "Instant feedback and explanations",
+      "noRegistration": "No registration required",
+      "multiLanguages": "Available in multiple languages"
+    },
+    "button": "Start Free Trial Now"
+  },
+
+  "HowItWorks": {
+    "title": "How It Works",
+    "subtitle": "Our proven 4-step process has helped over 50,000 new drivers pass their Canadian driving test. Simple, effective, and guaranteed to work.",
+    "steps": {
+      "choosePlan": {
+        "title": "Choose a Plan",
+        "description": "Select the study duration that fits your schedule - 3 days, 4 days, or get the premium guide."
+      },
+      "answerQuestions": {
+        "title": "Answer Practice Questions",
+        "description": "Practice with real exam-style questions, get instant feedback, and learn from detailed explanations."
+      },
+      "readGuide": {
+        "title": "Read the Guide (Optional)",
+        "description": "Enhance your knowledge with our comprehensive study guide covering all Canadian driving rules."
+      },
+      "passTest": {
+        "title": "Pass the Real Test!",
+        "description": "Walk into your driving test with confidence and pass on your first try, just like thousands before you."
+      }
+    },
+    "cta": {
+      "readyTitle": "Ready to Start Your Journey?",
+      "readySubtitle": "Join thousands of successful drivers who chose our proven method. Start with our free trial today!",
+      "startTrial": "Start Free Trial",
+      "choosePlan": "Choose Your Plan"
+    }
+  },
+  
+  "MultilingualSection": {
+    "title": "Study in Your Native Language",
+    "subtitle": "We understand that learning in your native language makes all the difference. That's why our platform supports 24+ languages to help you succeed.",
+    "features": {
+      "languagesCount": "24+ Languages",
+      "professionalTranslation": "Professional Translation",
+      "culturalContext": "Cultural Context"
+    },
+    "languageSelector": {
+      "header": "Switch Languages Instantly",
+      "description": "Our intelligent language switcher adapts the entire platform to your preferred language, including questions, explanations, and interface elements.",
+      "sampleEnglish": {
+        "label": "🇨🇦 English",
+        "sampleQuestionTitle": "Sample Question:",
+        "sampleQuestion": "\"What should you do when approaching a yellow traffic light?\"",
+        "changeButton": "Change Language"
+      },
+      "sampleFrench": {
+        "label": "🇫🇷 Français",
+        "sampleQuestionTitle": "Sample Question:",
+        "sampleQuestion": "\"Que devez-vous faire lorsque vous approchez d'un feu jaune?\"",
+        "changeButton": "Change Language"
+      },
+      "tryButton": "Try in Your Language"
+    }
+  },
+  "PaymentMethods": {
+    "title": "Secure Payment Options",
+    "subtitle": "We accept multiple payment methods to make your purchase convenient and secure. All transactions are protected with bank-level encryption.",
+    "methods": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "paypal": "PayPal",
+      "amex": "American Express",
+      "debit": "Debit Cards",
+      "etransfer": "E-Transfer"
+    },
+    "accepted": "✓ Accepted",
+    "notAccepted": "✗ Not Supported",
+    "securityHeader": "Your Payment Security",
+    "securityFeatures": {
+      "ssl": {
+        "title": "SSL Encryption",
+        "description": "All data transmitted is encrypted with 256-bit SSL security"
+      },
+      "pci": {
+        "title": "PCI Compliant",
+        "description": "We meet the highest standards for payment processing"
+      },
+      "fraud": {
+        "title": "Fraud Protection",
+        "description": "Advanced fraud detection keeps your information safe"
+      }
+    },
+    "importantInfoTitle": "Important Payment Information",
+    "importantInfo": "We do not accept e-transfers at this time. Please use one of the accepted payment methods above. All payments are processed instantly, and you'll receive immediate access to your chosen plan."
+  },
+  
+  "LegalSection": {
+    "canadaOnlyTitle": "Canada-Only Service",
+    "proudlyCanadian": "🇨🇦 Proudly Canadian",
+    "canadaDescription": "Our platform and advertising are exclusively targeted to users within Canada. We comply with all Canadian privacy laws and regulations to ensure your data is protected.",
+    "features": {
+      "geoTargeted": "Geo-targeted advertising only within Canada",
+      "canadianContent": "Content specifically designed for Canadian driving laws",
+      "supportTimeZones": "Customer support in Canadian time zones",
+      "pricingCAD": "Pricing in Canadian dollars (CAD)"
+    },
+    "advertisingPartnersTitle": "Our Advertising Partners",
+    "facebookAds": {
+      "title": "Facebook Ads",
+      "description": "Targeted to Canadian users only"
+    },
+    "youtubeAds": {
+      "title": "YouTube Ads",
+      "description": "Geographic targeting: Canada only"
+    },
+    "advertiseCTA": {
+      "title": "Want to Advertise with Us?",
+      "description": "If you're a Canadian business looking to reach new drivers, we offer advertising opportunities.",
+      "button": "Make an Ad"
+    },
+    "legalComplianceTitle": "Legal Compliance & Privacy",
+    "compliance": {
+      "pipeda": {
+        "title": "PIPEDA Compliant",
+        "description": "We follow Canada's Personal Information Protection and Electronic Documents Act"
+      },
+      "dataProtection": {
+        "title": "Data Protection",
+        "description": "Your personal information is stored securely and never shared with third parties"
+      },
+      "canadianLaw": {
+        "title": "Canadian Law",
+        "description": "All services operate under Canadian jurisdiction and consumer protection laws"
+      }
+    }
+  },
  "Footer": {
-        "contact": "Contact us",
-        "privacy": "Privacy Policy",
-        "terms": "Terms of Service"
-}
+    "companyName": "Driving Assessment",
+    "companyTagline": "for Canada",
+    "companyDescription": "Your trusted partner for Canadian driving test preparation. Helping new drivers succeed since day one.",
+    "backToTop": "Back to top",
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "freeTrial": "Free Trial",
+      "pricingPlans": "Pricing Plans",
+      "premiumGuide": "Premium Guide",
+      "successStories": "Success Stories"
+    },
+    "support": {
+      "title": "Support",
+      "helpCenter": "Help Center",
+      "contactUs": "Contact Us",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "refundPolicy": "Refund Policy"
+    },
+    "contact": {
+      "title": "Contact Info",
+      "location": "Canada Only Service",
+      "email": "support@drivingassessment.ca",
+      "phone": "1-800-DRIVE-CA",
+      "language": "Language"
+    },
+    "languages": {
+      "english": "🇨🇦 English",
+      "french": "🇫🇷 Français",
+      "arabic": "🇸🇦 العربية",
+      "chinese": "🇨🇳 中文",
+      "spanish": "🇪🇸 Español",
+      "urdu": "🇵🇰 اردو"
+    },
+    "bottom": {
+      "copyright": "© {year} Driving Assessment for Canada. All rights reserved.",
+      "madeInCanada": "🇨🇦 Made in Canada",
+      "securePrivate": "🔒 Secure & Private",
+      "pipedaCompliant": "✅ PIPEDA Compliant"
+    }
+  }
 }

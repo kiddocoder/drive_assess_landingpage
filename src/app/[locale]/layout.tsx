@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import TopProgressBar from '@/components/TopProgressBar';
 import "../globals.css";
+import { AuthProvider } from '@/contexts/AuthContext';
 
 export default async function LocaleLayout({
     children,
@@ -20,8 +21,10 @@ export default async function LocaleLayout({
     return (
         <html lang={locale}>
             <body>
-                <TopProgressBar />
-                <NextIntlClientProvider>{children}</NextIntlClientProvider>
+                <AuthProvider>
+                    <TopProgressBar />
+                    <NextIntlClientProvider>{children}</NextIntlClientProvider>
+                </AuthProvider>
             </body>
         </html>
     );

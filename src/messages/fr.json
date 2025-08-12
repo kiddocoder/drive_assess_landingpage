@@ -85,9 +85,212 @@
       "redirecting": "Redirection vers le paiement..."
     }
   },
- "Footer": {
-        "contact": "Contact us",
-        "privacy": "Privacy Policy",
-        "terms": "Terms of Service"
-}
+  "WhyChooseUs": {
+    "title": "Pourquoi choisir notre plateforme ?",
+    "subtitle": "Rejoignez des milliers de conducteurs réussis qui ont choisi la plateforme de préparation aux examens de conduite la plus fiable et complète au Canada.",
+    "features": {
+      "trusted": {
+        "title": "Approuvé par les nouveaux résidents canadiens",
+        "description": "Plus de 50 000 immigrants et nouveaux conducteurs ont réussi leurs tests grâce à notre plateforme."
+      },
+      "realQuestions": {
+        "title": "Questions d'examen réelles",
+        "description": "Nos questions sont exactement modélisées sur le format et le contenu officiels du test de conduite canadien."
+      },
+      "languages": {
+        "title": "Plus de 24 langues disponibles",
+        "description": "Étudiez dans votre langue maternelle avec le support de l'arabe, du chinois, du français, de l'espagnol, de l'ourdou, et plus encore."
+      },
+      "loginOptions": {
+        "title": "Options de connexion simples",
+        "description": "Accédez avec votre numéro de téléphone, e-mail, ou essayez des questions d'exemple sans créer de compte."
+      }
+    },
+    "stats": {
+      "successfulStudents": "Étudiants réussis",
+      "passRate": "Taux de réussite",
+      "languages": "Langues",
+      "practiceQuestions": "Questions pratiques"
+    }
+  },
+  "FreeTrialSection": {
+    "title": "Essayez 3-4 questions d'exemple gratuitement !",
+    "subtitle": "Découvrez notre plateforme avec de vraies questions pratiques. Pas besoin de s'inscrire, pas de carte de crédit nécessaire. Juste une préparation authentique à l'examen de conduite canadien.",
+    "features": {
+      "realQuestions": "Questions dans le style de l'examen réel",
+      "instantFeedback": "Retour instantané et explications",
+      "noRegistration": "Aucune inscription requise",
+      "multiLanguages": "Disponible en plusieurs langues"
+    },
+    "button": "Commencer l'essai gratuit"
+  },
+  "HowItWorks": {
+    "title": "Comment ça marche",
+    "subtitle": "Notre processus en 4 étapes éprouvé a aidé plus de 50 000 nouveaux conducteurs à réussir leur examen de conduite canadien. Simple, efficace et garanti.",
+    "steps": {
+      "choosePlan": {
+        "title": "Choisissez un forfait",
+        "description": "Sélectionnez la durée d'étude qui correspond à votre emploi du temps - 3 jours, 4 jours, ou obtenez le guide premium."
+      },
+      "answerQuestions": {
+        "title": "Répondez aux questions pratiques",
+        "description": "Exercez-vous avec des questions dans le style de l'examen réel, obtenez des retours instantanés et apprenez avec des explications détaillées."
+      },
+      "readGuide": {
+        "title": "Lisez le guide (facultatif)",
+        "description": "Améliorez vos connaissances avec notre guide d'étude complet couvrant toutes les règles de conduite canadiennes."
+      },
+      "passTest": {
+        "title": "Réussissez l'examen réel !",
+        "description": "Présentez-vous à votre examen de conduite en toute confiance et réussissez du premier coup, comme des milliers avant vous."
+      }
+    },
+    "cta": {
+      "readyTitle": "Prêt à commencer votre parcours ?",
+      "readySubtitle": "Rejoignez des milliers de conducteurs réussis qui ont choisi notre méthode éprouvée. Commencez avec notre essai gratuit aujourd'hui !",
+      "startTrial": "Commencer l'essai gratuit",
+      "choosePlan": "Choisissez votre forfait"
+    }
+  },
+  "MultilingualSection": {
+    "title": "Étudiez dans votre langue maternelle",
+    "subtitle": "Nous savons que l'apprentissage dans votre langue maternelle fait toute la différence. C'est pourquoi notre plateforme prend en charge plus de 24 langues pour vous aider à réussir.",
+    "features": {
+      "languagesCount": "24+ langues",
+      "professionalTranslation": "Traduction professionnelle",
+      "culturalContext": "Contexte culturel"
+    },
+    "languageSelector": {
+      "header": "Changez de langue instantanément",
+      "description": "Notre sélecteur de langue intelligent adapte toute la plateforme à votre langue préférée, y compris les questions, les explications et les éléments de l'interface.",
+      "sampleEnglish": {
+        "label": "🇨🇦 Anglais",
+        "sampleQuestionTitle": "Question d'exemple :",
+        "sampleQuestion": "\"Que devez-vous faire lorsque vous approchez d'un feu jaune ?\"",
+        "changeButton": "Changer la langue"
+      },
+      "sampleFrench": {
+        "label": "🇫🇷 Français",
+        "sampleQuestionTitle": "Question d'exemple :",
+        "sampleQuestion": "\"Que devez-vous faire lorsque vous approchez d'un feu jaune ?\"",
+        "changeButton": "Changer la langue"
+      },
+      "tryButton": "Essayez dans votre langue"
+    }
+  },
+
+  "PaymentMethods": {
+    "title": "Options de paiement sécurisées",
+    "subtitle": "Nous acceptons plusieurs méthodes de paiement pour rendre votre achat pratique et sécurisé. Toutes les transactions sont protégées par un cryptage de niveau bancaire.",
+    "methods": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "paypal": "PayPal",
+      "amex": "American Express",
+      "debit": "Cartes de débit",
+      "etransfer": "Virement électronique"
+    },
+    "accepted": "✓ Accepté",
+    "notAccepted": "✗ Non pris en charge",
+    "securityHeader": "Sécurité de votre paiement",
+    "securityFeatures": {
+      "ssl": {
+        "title": "Cryptage SSL",
+        "description": "Toutes les données transmises sont cryptées avec une sécurité SSL 256 bits"
+      },
+      "pci": {
+        "title": "Conforme PCI",
+        "description": "Nous respectons les normes les plus strictes pour le traitement des paiements"
+      },
+      "fraud": {
+        "title": "Protection contre la fraude",
+        "description": "La détection avancée des fraudes protège vos informations"
+      }
+    },
+    "importantInfoTitle": "Informations importantes sur le paiement",
+    "importantInfo": "Nous n'acceptons pas les virements électroniques pour le moment. Veuillez utiliser l'une des méthodes de paiement acceptées ci-dessus. Tous les paiements sont traités instantanément et vous aurez un accès immédiat à votre plan choisi."
+  },
+  "LegalSection": {
+    "canadaOnlyTitle": "Service réservé au Canada",
+    "proudlyCanadian": "🇨🇦 Fièrement canadien",
+    "canadaDescription": "Notre plateforme et nos publicités sont exclusivement destinées aux utilisateurs situés au Canada. Nous respectons toutes les lois canadiennes sur la vie privée afin de protéger vos données.",
+    "features": {
+      "geoTargeted": "Publicité géo-ciblée uniquement au Canada",
+      "canadianContent": "Contenu spécialement conçu pour les lois canadiennes sur la conduite",
+      "supportTimeZones": "Support client dans les fuseaux horaires canadiens",
+      "pricingCAD": "Tarification en dollars canadiens (CAD)"
+    },
+    "advertisingPartnersTitle": "Nos partenaires publicitaires",
+    "facebookAds": {
+      "title": "Publicités Facebook",
+      "description": "Ciblées uniquement aux utilisateurs canadiens"
+    },
+    "youtubeAds": {
+      "title": "Publicités YouTube",
+      "description": "Ciblage géographique : Canada uniquement"
+    },
+    "advertiseCTA": {
+      "title": "Vous souhaitez faire de la publicité avec nous ?",
+      "description": "Si vous êtes une entreprise canadienne souhaitant atteindre de nouveaux conducteurs, nous proposons des opportunités publicitaires.",
+      "button": "Créer une annonce"
+    },
+    "legalComplianceTitle": "Conformité légale et confidentialité",
+    "compliance": {
+      "pipeda": {
+        "title": "Conforme à la LPRPDE",
+        "description": "Nous respectons la Loi canadienne sur la protection des renseignements personnels et les documents électroniques"
+      },
+      "dataProtection": {
+        "title": "Protection des données",
+        "description": "Vos informations personnelles sont stockées en toute sécurité et ne sont jamais partagées avec des tiers"
+      },
+      "canadianLaw": {
+        "title": "Droit canadien",
+        "description": "Tous les services fonctionnent sous la juridiction canadienne et les lois de protection des consommateurs"
+      }
+    }
+  },
+  "Footer": {
+    "companyName": "Évaluation de Conduite",
+    "companyTagline": "pour le Canada",
+    "companyDescription": "Votre partenaire de confiance pour la préparation aux examens de conduite canadiens. Aidons les nouveaux conducteurs à réussir depuis le premier jour.",
+    "backToTop": "Retour en haut",
+    "quickLinks": {
+      "title": "Liens Rapides",
+      "home": "Accueil",
+      "freeTrial": "Essai Gratuit",
+      "pricingPlans": "Plans Tarifaires",
+      "premiumGuide": "Guide Premium",
+      "successStories": "Histoires de Réussite"
+    },
+    "support": {
+      "title": "Support",
+      "helpCenter": "Centre d'Aide",
+      "contactUs": "Contactez-Nous",
+      "termsOfService": "Conditions d'Utilisation",
+      "privacyPolicy": "Politique de Confidentialité",
+      "refundPolicy": "Politique de Remboursement"
+    },
+    "contact": {
+      "title": "Informations de Contact",
+      "location": "Service Canada Seulement",
+      "email": "support@drivingassessment.ca",
+      "phone": "1-800-DRIVE-CA",
+      "language": "Langue"
+    },
+    "languages": {
+      "english": "🇨🇦 Anglais",
+      "french": "🇫🇷 Français",
+      "arabic": "🇸🇦 العربية",
+      "chinese": "🇨🇳 中文",
+      "spanish": "🇪🇸 Espagnol",
+      "urdu": "🇵🇰 اردو"
+    },
+    "bottom": {
+      "copyright": "© {year} Évaluation de Conduite pour le Canada. Tous droits réservés.",
+      "madeInCanada": "🇨🇦 Fait au Canada",
+      "securePrivate": "🔒 Sécurisé et Privé",
+      "pipedaCompliant": "✅ Conforme PIPEDA"
+    }
+  }
 }
