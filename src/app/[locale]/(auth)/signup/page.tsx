@@ -76,7 +76,7 @@ const SignUp = () => {
                                                 type="text"
                                                 name="name"
                                                 value={formData.name}
-                                                onChange={() => { }}
+                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                                 placeholder="Tresor NDAYIKEZA"
                                                 required
                                             />
@@ -95,7 +95,7 @@ const SignUp = () => {
                                                 type="text"
                                                 name="location"
                                                 value={formData.location}
-                                                onChange={() => { }}
+                                                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                                                 placeholder="Bujumbura,Burundi,Kamenge"
                                                 required
                                             />
@@ -114,7 +114,7 @@ const SignUp = () => {
                                                 type="text"
                                                 name="phone"
                                                 value={formData.phone}
-                                                onChange={() => { }}
+                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                                 placeholder="+25766678298"
                                                 required
                                             />
@@ -146,7 +146,7 @@ const SignUp = () => {
                                                 type="email"
                                                 name="email"
                                                 value={formData.email}
-                                                onChange={() => { }}
+                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                                 placeholder="tresor257bi@email.com"
                                                 required
                                             />

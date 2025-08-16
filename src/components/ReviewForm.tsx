@@ -5,6 +5,12 @@ import { Star } from "lucide-react";
 
 export default function ReviewForm() {
     const [rating, setRating] = useState(1);
+    const [review, setReview] = useState("");
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        // Handle form submission here
+    };
 
     return (
         <div>
@@ -27,7 +33,7 @@ export default function ReviewForm() {
                 ))}
             </div>
 
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
 
                 {/* Review */}
                 <div>
@@ -35,8 +41,10 @@ export default function ReviewForm() {
                         Detailed Review
                     </label>
                     <textarea
+                        onChange={(e) => setReview(e.target.value)}
                         id="review"
                         rows={4}
+                        value={review}
                         placeholder="Tell us more about your experience..."
                         className="mt-1 block w-full rounded-lg border border-gray-300 bg-iceWhite px-4 py-2 focus:border-coolBlue focus:ring-2 focus:ring-coolBlue/50 outline-none transition"
                         required

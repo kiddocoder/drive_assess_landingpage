@@ -4,6 +4,14 @@ import { routing } from '@/i18n/routing';
 import TopProgressBar from '@/components/TopProgressBar';
 import "../globals.css";
 import { AuthProvider } from '@/contexts/AuthContext';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Driving Assessment for Canada - Practice Your Driving Test",
+    icons: {
+        icon: "/logo.png"
+    }
+}
 
 export default async function LocaleLayout({
     children,

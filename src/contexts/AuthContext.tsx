@@ -53,23 +53,21 @@ export const AuthProvider = ({ children }: any) => {
             setIsLoading(false)
         }
     }, [])
-
     const login = async ({ identifier, password }: { identifier: string, password: string }) => {
         setIsLoading(true);
         try {
             const response = await API.post('/auth/login', { identifier, password });
-            setUser(response.data.user);
-            localStorage.setItem('user', JSON.stringify(response.data.user))
-            localStorage.setItem('token', response.data.token)
+            const { user, token } = response.data;
+            setUser(user);
+            localStorage.setItem('user', JSON.stringify(user))
+            localStorage.setItem('token', token)
             setIsAuthenticated(true)
             // toast.success(response.data.message);
             return true;
         } catch (error: any) {
             setFormError(error?.response?.data?.message || error?.response?.data?.errors[0]?.message);
-
         } finally {
             setIsLoading(false);
-
         }
     };
 

@@ -12,6 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/compat/router";
 import Link from "next/link";
+import { redirect } from "next/navigation"
 
 const Login = () => {
     const { login, isLoading, user, formError, isAuthenticated } = useAuth();
@@ -24,7 +25,7 @@ const Login = () => {
 
     useEffect(() => {
         if (isAuthenticated || user) {
-            router?.push("/")
+            redirect("/");
         }
     }, [])
 
@@ -32,12 +33,10 @@ const Login = () => {
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        const k = await login(formData);
+        const { identifier, password } = formData;
 
-        if (k) {
-            router?.push("/")
-        }
-        return;
+        await login({ identifier, password }).then(() => redirect("/"));
+
     }
 
 

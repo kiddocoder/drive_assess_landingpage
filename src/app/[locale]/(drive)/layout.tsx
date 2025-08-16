@@ -12,12 +12,13 @@ const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
 });
-
 export const metadata: Metadata = {
-    title: "Create Next App",
+    title: "Driving Assessment for Canada - Practice Your Driving Test",
     description: "Driving Assessment for Canada - Practice Your Driving Test",
-};
-
+    icons: {
+        icon: "/logo.png"
+    }
+}
 export default function RootLayout({
     children,
 }: Readonly<{

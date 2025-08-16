@@ -1,10 +1,10 @@
 {
 "App":{
-"Title": "Josnet Drive",
-  "Description": "Josnet Drive is a secure and reliable cloud storage solution that offers seamless file management and sharing capabilities.",
-  "Keywords": "cloud storage, file management, secure storage, Josnet Drive",
-  "Author": "Josnet Team",
-  "Copyright": "© 2023 Josnet Drive. All rights reserved."
+"Title": "Drive Assessment",
+  "Description": "Drive Assessment is a secure and reliable cloud storage solution that offers seamless file management and sharing capabilities.",
+  "Keywords": "cloud storage, file management, secure storage, Drive",
+  "Author": "Team",
+  "Copyright": "© 2023 Drive Assessment. All rights reserved."
 },
   "Header": {
     "home": "Home",

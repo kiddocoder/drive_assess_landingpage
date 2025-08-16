@@ -6,7 +6,7 @@ import { PaymentElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import { createPaymentIntent } from "../services/payment"
 import { CreditCard, Shield, Lock, AlertCircle } from "lucide-react"
 import { savePayment } from "../api/payments"
-import { useSearchParams } from "react-router-dom"
+import { useSearchParams } from 'next/navigation'
 
 interface PaymentFormProps {
     amount: number
@@ -20,7 +20,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ amount, onSuccess, pay
     const [isProcessing, setIsProcessing] = useState(false)
     const [error, setError] = useState<string | null>(null)
 
-    const [searchParams] = useSearchParams();
+    const searchParams = useSearchParams();
 
     const plan = searchParams.get('plan')
 

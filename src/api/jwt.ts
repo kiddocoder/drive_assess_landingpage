@@ -1,5 +1,6 @@
-import { API } from "../config/axios";
+"use client";
 
+import { API } from "../config/axios";
 
 export const generateAccessToken = async (data: any) => {
     const response = await API.post('/jwt/generate', data);
