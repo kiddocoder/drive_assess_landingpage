@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-onest">
               {t.rich("title", {
-                Proof: (chunks) => <span className="text-yellow-400">{chunks}</span>
+                Proof: (chunks: any) => <span className="text-yellow-400">{chunks}</span>
               })}
             </h1>
 
