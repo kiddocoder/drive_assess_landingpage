@@ -5,14 +5,13 @@ import { Check, Star, BookOpen, Clock, CreditCard, Loader2 } from "lucide-react"
 import { generateAccessToken } from "@/api/jwt"
 import { useState } from "react"
 import { useAuth } from "@/contexts/AuthContext"
-import { useRouter } from "next/navigation"
+import { redirect } from "next/navigation"
 import { useTranslations } from "next-intl"
 
 const PricingPlans: React.FC = () => {
   const [isRedirecting, setIsRedirecting] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState<typeof plans[0] | null>(null)
   const { user, isAuthenticated } = useAuth()
-  const router = useRouter()
   const t = useTranslations("Pricing")
 
   const plans = [
@@ -44,7 +43,7 @@ const PricingPlans: React.FC = () => {
 
   const handleGoToCheckout = async (plan: typeof plans[0]) => {
     if (!user || !isAuthenticated) {
-      router.push("/login")
+      redirect("/login")
       return
     }
 
@@ -52,7 +51,7 @@ const PricingPlans: React.FC = () => {
     setSelectedPlan(plan)
     try {
       const data = await generateAccessToken(plan)
-      router.push(`/checkout?jwt=${data.token}&plan=${plan.plan}`)
+      redirect(`/checkout?jwt=${data.token}&plan=${plan.plan}`)
     } finally {
       setIsRedirecting(false)
       setSelectedPlan(null)

@@ -1,5 +1,3 @@
-"use client";
-
 import { API } from "../config/axios";
 
 export const generateAccessToken = async (data: any) => {

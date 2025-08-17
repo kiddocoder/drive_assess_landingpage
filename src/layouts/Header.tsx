@@ -7,11 +7,13 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { usePathname } from "@/i18n/navigation"
 import languages from "@/data/allowed_languages.json"
+import { useAuth } from "@/contexts/AuthContext"
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
+  const { user, isAuthenticated, token, logout } = useAuth()
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const locale = e.target.value.toLowerCase()
@@ -68,11 +70,21 @@ const Header: React.FC = () => {
               </select>
               <Globe className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
             </div>
-            <Link
-              href="/signup"
-              className="cursor-pointer bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
-              Sign Up
-            </Link>
+            <button>
+              {!user || !token || !isAuthenticated ? (
+                <Link
+                  href="/login"
+                  className="cursor-pointer bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                  Login
+                </Link>
+              ) : (
+                <button
+                  onClick={logout}
+                  className="cursor-pointer bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                  Logout
+                </button>
+              )}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
